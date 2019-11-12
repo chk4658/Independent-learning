@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 继承：类型与类型之间的关系
+		// Person类型  学生类型  老师类型
+		// 继承目的:把子类型中共同的成员提取到父类型，代码重用
+		function Person() {
+			this.name = 'zs';
+			this.age = 18;
+			this.sex = '男';
+		}
+		function Student() {
+			this.score = 100;
+		}
+		// 原型继承并不会使用
+		Student.prototype = new Person();
+		// 还要设备原型属性的constructor
+		Student.prototype.constructor = Student;
+		var s1 = new Student();
+		console.dir(s1);
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="跳转" id="btn">
+
+	<script type="text/javascript">
+		var btn = document.getElementById('btn');
+		// location对象是window对象下的一个属性，使用的时候可以省略window对象
+                // location可以获取或者设置浏览器地址栏的URL
+        btn.onclick = function() {
+        	// console.log(location.href);
+        	// file:///C:/Users/Administrator/Desktop/github/location.html 冒号前面表示协议，这里是本地协议
+
+        	// location.assign(url: DOMString);assign委派，作用和href一样
+        	// location.assign('http://www.baidu.com');
+
+        	// location.replace(nodes...: Node|DOMString),替换地址栏中的地址，但是不记录历史，不能后退
+        	// location.replace('http://www.baidu.com');
+
+        	location.reload();
+        	// 重新加载，相当于f5
+        	// 参数  true  强制从服务器获取页面(control + f5)  false  如果服务器有缓存的话，直接从缓存获取(f5)
+
+        }
+	</script>
+</body>
+</html>

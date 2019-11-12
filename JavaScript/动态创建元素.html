@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>标题</h1>
+	<input type="button" value="按钮" id="btn">
+	<div id="box"></div>
+	<input type="button" value="按钮2" id="btn2">
+
+	<script type="text/javascript">
+		// 动态创建元素
+		// document.write()
+		// element.innerHTML
+		// document.createElement()
+        
+        var btn = document.getElementById('btn');
+        btn.onclick = function() {
+        	document.write('hello<p>world</p>');
+        	// 会把页面之前的内容给覆盖掉  很少用  页面客服
+        }
+		
+		var box = document.getElementById('box');
+		var btn2 = document.getElementById('btn2');
+		btn2.onclick = function() {
+			box.innerHTML = 'hello<p>world</p>';
+			// 画出来的,可能有效率问题 
+		}
+		
+		var p = document.createElement('p');
+		p.innerText = 'hello';
+		p.style.color = 'red';
+		// 把p元素放到DOM树上
+		box.appendChild(p);
+		// 推荐使用
+	</script>
+</body>
+</html>

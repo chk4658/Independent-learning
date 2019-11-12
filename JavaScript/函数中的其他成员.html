@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn() {
+            // 函数内部有一个私有的变量arguments
+            console.log(arguments);
+
+            /* // 伪数组  获取到的是函数的实参
+            console.log(fn.arguments);
+            // 函数的调用者，在全局范围调用的时候caller是null
+            console.log(fn.caller);
+            // 函数的名称，字符串类型
+            console.log(fn.name);
+            // 函数的形参个数
+            console.log(fn.length); */
+        }
+        console.dir(fn);
+        fn(1, 3, 6);
+    </script>
+</body>
+</html>

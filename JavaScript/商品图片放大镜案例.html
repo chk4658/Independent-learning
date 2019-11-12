@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.box {
+			width: 350px;
+			height: 350px;
+			margin: 100px;
+			border: 1px solid #ccc;
+			position: relative;
+		}
+		.big {
+			width: 400px;
+			height: 400px;
+			position: absolute;
+			top: 0;
+			left: 360px;
+			border: 1px solid #ccc;
+			overflow: hidden;
+			display: none;
+		}
+		.big img {
+			position: absolute;
+		}
+		.mask {
+			width: 175px;
+			height: 175px;
+			background: rgba(125, 72, 0, .4);
+			position: absolute;
+			top: 0;
+			left: 0;
+			cursor: move;
+			display: none;
+		}
+		.small {
+			position: relative;
+		}
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+		<div class="small">
+			<!-- webp相同画质体积更小 -->
+			<img src="images/small.webp" width="350px">
+			<div class="mask"></div>
+		</div>
+		<div class="big">
+			<img src="images/big.jpg">
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var box = document.getElementById('box');
+		var smallBox = box.children[0];
+		var bigBox = box.children[1];
+		var smallImage = smallBox.children[0];
+		var mask = smallBox.children[1];
+		var bigImage = bigBox.children[0];
+
+		// 1、鼠标经过的时候显示mask和bigBox，离开时隐藏
+        // onmouseenter  onmouseleave不会触发事件冒泡，其他和下面两个差不多,不过这两个可以兼容ie
+		box.onmouseover = function() {
+			mask.style.display = 'block';
+			bigBox.style.display = 'block';
+		}
+		box.onmouseout = function() {
+			mask.style.display = 'none';
+			bigBox.style.display = 'none';
+		}
+
+		// 2、鼠标在盒子中移动的时候，让mask和鼠标一起移动
+		box.onmousemove = function(e) {
+			e = e || window.event;
+			// 先获取鼠标在盒子中的位置
+			var maskX = e.pageX - box.offsetLeft;
+			var maskY = e.pageY - box.offsetTop;
+			// 鼠标在mask中心
+			maskX = maskX - mask.offsetWidth / 2;
+			maskY = maskY - mask.offsetHeight / 2;
+			// mask出去了还没有消失 原因是事件冒泡
+			// 判断一下
+			maskX = maskX < 0 ? 0 : maskX;
+			maskY = maskY < 0 ? 0 : maskY;
+			maskX = maskX > (box.offsetWidth - mask.offsetWidth) ? (box.offsetWidth - mask.offsetWidth) : maskX;
+			maskY = maskY > (box.offsetHeight - mask.offsetHeight) ? (box.offsetHeight - mask.offsetHeight) : maskY;
+            mask.style.left = maskX + 'px';
+            mask.style.top = maskY + 'px';
+
+            bigX = (maskX / box.offsetWidth) * bigImage.offsetWidth;
+            bigY = (maskY / box.offsetHeight) * bigImage.offsetHeight;
+            bigImage.style.left = - bigX + 'px';
+            bigImage.style.top = - bigY + 'px';        
+		}
+		// 3、当mask移动的时候，让大图片移动
+	</script>
+</body>
+</html>

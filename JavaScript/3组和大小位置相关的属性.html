@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#box {
+			width: 300px;
+			height: 300px;
+			background-color: #f00;
+			overflow: hidden;
+			margin: 50px;
+			position: relative;
+		}
+		#child {
+			width: 100px;
+			height: 100px;
+			background-color: #00f;
+			margin: 50px;
+			border: 10px solid yellow;
+			padding: 10px;
+			/*内容超出时显示滚动条*/
+			overflow: auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="child">
+			人之一生，但夕祸福，最终还不是归于一堆黄土吗?也许你做不了官，但你肯定会做人;也许你缺少钱，但你肯定很富足。
+
+　　人之命运，命里一尺，难求一丈，中国的老俗话颇有道理，没有必要做无谓的抗争，老天爷早为你安排好了一切，该啥样就啥样了。
+
+　　人之婚姻，破锅自有破锅盖，啥人自有啥人爱，当初坚定的要嫁他(娶她)，就一定有嫁他(娶她)的理由。现在嘛，闭一只眼，对他(她)的不能容忍也要视而不见，睁一只眼，看看他(她)身上的闪光点，人无完人嘛。
+
+　　人之家庭，几个不和谐的音符被巧妙的凑到一块，没准能奏出异常优美的乐章，那看你怎么欣赏了，反正演奏者是乐在其中。
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		// 3组和大小  位置相关的属性
+		// offset  client  scorll 
+
+		// offset偏移量
+		/*var box = document.getElementById('box');
+		// 获取box的坐标
+		console.log(box.offsetLeft);
+		console.log(box.offsetTop);
+		// 获取box的大小 包括padding 和 边框 
+		console.log(box.offsetWidth);
+		console.log(box.offsetHeight);*/
+
+		// 获取子元素的坐标
+		/*var child = document.getElementById('child');
+		console.log(child.offsetLeft);
+		console.log(child.offsetTop);*/
+
+		// 如果要获取相对于父元素的偏移量
+		// offsetParent 获取距离当前元素最近的定位父元素，如果没有定位父元素则是body
+		/*var child = document.getElementById('child');
+		console.log(child.offsetParent);
+		// 下面是相对offsetParent的偏移
+		console.log(child.offsetLeft);
+		console.log(child.offsetTop);*/
+
+
+		// client
+		/*var child = document.getElementById('child');
+		// clientLeft是border-left的宽度
+		// clientTop是border-top的宽度
+		console.log(child.clientLeft);
+		console.log(child.clientTop);
+		// 获取大小，内容加padding不包括边框
+		console.log(child.clientWidth);
+		console.log(child.clientHeight);*/
+
+
+		// scroll
+		var child = document.getElementById('child');
+		// 拖动滚动条的事件
+		child.onscroll = function() {
+			// 滚动出去的内容的距离
+			console.log(child.scrollLeft);
+		    console.log(child.scrollTop);
+		}
+		
+		// 内容的大小，包括padding和未显示的内容，不包括滚动条
+		console.log(child.scrollWidth);/*100px + 10px * 2 - 滚动条宽度17px*/
+		console.log(child.scrollHeight);
+	</script>
+</body>
+</html>

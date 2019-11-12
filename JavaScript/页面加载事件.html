@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		// BOM  onload  页面加载完成之后执行
+		// 页面加载完成  页面上所有的元素创建完毕,并且引用的外部资源下载完毕(js,css,图片)
+		// window.onload = function(){}
+		onload = function() {
+			var box = document.getElementById('box');
+			console.dir(box);
+		}
+
+		onunload = function() {
+			// 页面卸载的时候执行
+			// 在onunload中所有的对话框都无法使用  window对象被冻结
+			console.log('asdasdas');
+		}
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>

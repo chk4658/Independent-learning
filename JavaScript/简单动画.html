@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#box {
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="开始" id="btn">
+	<div id="box"></div>
+
+    <script src="animate.js"></script>
+	<script type="text/javascript">
+		var btn = document.getElementById('btn');
+		var box = document.getElementById('box');
+		// 点的越快，速度越快，改进：点击一次，判断是否已有定时器，有就停了再开一个
+		/*var timeId = null;
+		btn.onclick = function() {
+			if(timeId) {
+				clearInterval(timeId);
+				timeId = null;
+			}
+			// style.left获取的是标签中的style属性设置的样式属性的值
+			// 如果标签中没有设置该样式属性，获取的是空字符串,所以只移动一次
+			// box.style.left = box.style.left + 10 + 'px';
+
+			// 获取盒子当前的位置  offserLeft  offsetTop只读属性
+			// box.style.left = box.offsetLeft + 10 + 'px';
+
+			// 让盒子不停的向右移动
+			timeId = setInterval(function() {
+				if(box.offsetLeft >= 500) {
+					// 停止定时器
+					clearInterval(timeId);
+					box.style.left = 500 + 'px';
+					// 退出函数
+					return;
+				}
+				box.style.left = box.offsetLeft + 6 + 'px';
+			}, 30);
+		}*/
+        btn.onclick = function() {
+        	animate(box, 800);
+        }
+	</script>
+</body>
+</html>

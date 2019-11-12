@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+	<input type="button" id="btn" value="换图">
+	<br>
+	<img src="images/4087858_094819248124_2.jpg" id="tp">
+
+	<script type="text/javascript">
+		// 事件：当什么时候做什么事
+		// 触发响应
+
+		// 1、获取按钮
+		var btn = document.getElementById('btn');
+		var tp = document.getElementById('tp');
+		// 2、给按钮注册事件
+		// 事件名称  click
+		// 事件源：  谁触发的事件
+		// 事件处理函数
+		var flag = 1;
+		// 当flag是1的时候，对应第一张图，2对应第二张图
+		btn.onclick = function() {
+			// 3、切换图片
+			if(flag === 1) {
+				tp.src = 'images/8649940_220505558734_2.jpg';
+				flag = 2;
+			}else if (flag === 2) {
+				tp.src = 'images/4087858_094819248124_2.jpg';
+				flag = 1;
+			}
+		}
+	</script>
+</body>
+</html>

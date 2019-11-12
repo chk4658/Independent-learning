@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul id="student">
+    <li>zhangsan</li>
+    <li>lisi</li>
+    <li>wangwu</li>
+    <li>zhaoliu</li>
+  </ul>
+  <script>
+    // 闭包：在一个作用域中可以访问另一个作用域的变量
+    // 一个现象：在全局作用域中访问到了局部作用域的时候
+    function fn() {
+      var n = 10;
+      return function() {
+        return n;
+      }
+    }
+    var f = fn();
+    console.log(f());
+    // 闭包特点：延展了函数的作用域范围，本应执行完就被销毁的作用域并没有被销毁
+
+    // 闭包案例
+    // 方式1、以前的方式
+    /* var student = document.getElementById('student');
+    var list = student.children;
+    for(var i = 0; i < list.length; i++) {
+      var li = list[i];
+      li.index = i;
+      li.onclick = function() {
+        console.log(this.index);
+      }
+    } */
+
+    // 方式2
+    /* var student = document.getElementById('student');
+    var list = student.children;
+    for(var i = 0; i < list.length; i++) {
+      var li = list[i];
+      (function(i) {
+        li.onclick = function() {
+          // 性能降低
+          console.log(i);
+        }
+      })(i);
+    } */
+
+    // 定时器的运行过程
+    // 先执行执行栈上的所有内容，再执行任务队列的处理函数
+    /* console.log('start');
+    setTimeout(function() {
+      console.log('timeout');
+    },0);
+    console.log('over'); */
+    
+    // 闭包案例
+    console.log('start');
+    for(var i = 0; i < 3; i++) {
+      (function(i) {
+        setTimeout(function() {
+          console.log(i);
+        },0);
+      })(i);
+    }
+    console.log('end');
+  </script>
+</body>
+</html>

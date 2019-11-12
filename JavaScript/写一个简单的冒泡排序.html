@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var num = [84,54,69,99,41,56];
+		for (var i = 0;i < num.length;i++){
+			for (var j = i+1; j < num.length; j++) {
+				if(num[i] > num[j]){
+					var temp = num[i];
+					num[i] = num[j];
+					num[j] = temp;
+				}
+			}
+		}
+		console.log(num)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

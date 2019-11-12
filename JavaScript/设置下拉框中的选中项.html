@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="设置" id="btnSet">
+	<select id="selCities">
+		<option value="1">北京</option>
+		<option value="2">上海</option>
+		<option value="3">杭州</option>
+		<option value="4">江苏</option>
+		<option value="5">宝应</option>
+	</select>
+
+	<script type="text/javascript">
+		// 1、给按钮注册事件
+		// 2、获取下拉框中的所有option
+		// 3、随机生成索引
+		// 4、根据索引获得option,使用selected使option被选中
+		var btnSet = document.getElementById('btnSet');
+		btnSet.onclick = function() {
+			var selCities = document.getElementById('selCities');
+			var options = selCities.getElementsByTagName('option');
+			// Math.random() -> [0,1)
+			var randomIndex = parseInt(Math.random()*options.length);
+			var option = options[randomIndex];
+			// 当标签的属性值单一时,对应的这个属性是布尔类型
+			option.selected = true;
+		}
+	</script>
+</body>
+</html>

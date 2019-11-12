@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="按钮" id="btn">
+	<ul id="ul">
+		<li>11</li>
+		<li>22</li>
+		<li>33</li>
+	</ul>
+	<ul id="sel"></ul>
+
+	<script type="text/javascript">
+		var btn = document.getElementById('btn');
+		btn.onclick = function() {
+			var li = document.createElement('li');
+			li.innerText = 'insertBefore';
+			var ul = document.getElementById('ul');
+			// ul.insertBefore(li, ul.children[1]);
+
+			var div = document.createElement('div');
+			div.innerText = 'replaceChild';
+			// ul.replaceChild(div, ul.children[0]);
+
+			var sel = document.getElementById('sel');
+			sel.appendChild(ul.children[0]);
+			// 索引会重排
+		}
+		// createElement(localName: DOMString)
+		// appendChild(node: Node)将一个节点添加到指定父节点列表末尾
+		// 如果被插入的节点已经存在于当前文档的文档树中，则那个节点首先从原先的位置移除，然后在插入到新的位置。如果要保留原先位置，要先用Node.cloneNode
+		// removeChild(child: Node)
+
+		// insertBefore(node: Node, child: Node)把元素插入到页面的指定位置
+		// replaceChild(node: Node, child: Node)把当前元素的标签进行替换
+	</script>
+</body>
+</html>

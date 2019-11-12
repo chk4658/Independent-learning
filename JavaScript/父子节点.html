@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box">
+		<span>span</span>
+		<p>p标签</p>
+		<!-- 注释节点 -->
+	</div>
+
+	<script type="text/javascript">
+		// 节点的层次结构
+
+		// 父子结构
+		// parentNode  
+		// childNodes
+		var box = document.getElementById('box');
+		console.log(box.parentNode);
+		console.log(box.childNodes);/*NodeList  7*/
+		// 换行也算是文本节点
+		for (var i = 0; i < box.childNodes.length; i++) {
+			var node = box.childNodes[i];
+			if(node.nodeType === 1) {
+				console.log(node);
+			}
+		}
+
+        // 获取所有的子元素     集合形式
+		console.log(box.children);
+	</script>
+</body>
+</html>

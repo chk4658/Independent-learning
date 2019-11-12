@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#shyzh {
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<img src="images/timg_03.gif" id="shyzh">
+
+	<script type="text/javascript">
+		var shyzh = document.getElementById('shyzh');
+		document.onmousemove = function(e) {
+			e = e || window.event;
+			shyzh.style.left = e.pageX - 20 + 'px';
+		    shyzh.style.top = e.pageY - 20 + 'px';
+
+		    // e.pageY / e.pageX有浏览器兼容性问题
+		    // pageY = clientY + 页面滚动出去的距离 
+		    // 页面滚动出去的距离 : 
+		    // document.body.scrollLeft    横向
+		    // document.body.scrollTop   纵向滚动出去的距离
+
+		    // documentElement  文档的根元素  html标签
+		    // 有些浏览器是使用下面两个的，chrome不行
+		    // document.documentElement.scrollLeft    横向
+		    // document.documentElement.scrollTop   纵向滚动出去的距离
+
+		    // offsetLeft  offsetTop  盒子在页面的位置
+		}
+	</script>
+</body>
+</html>

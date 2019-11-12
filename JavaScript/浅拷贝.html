@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function copy(o1, o2) {
+			for(var key in o1) {
+				o2[key] = o1[key];
+			}
+		}
+        var obj1 = {
+            name: 'zs',
+            age: 11,
+            sex: '男',
+            dog: {
+                name: '金毛',
+                age: 2,
+                yellow: '黄色'
+            }
+        }
+        var obj2 = {};
+        copy(obj1, obj2);
+
+        // 修改obj1中基本变量和对象中的变量
+        obj1.name = 'xxxx';
+        obj1.dog.name = 'dddd';
+        // name被修改了，dog.name没有被修改,这就是浅拷贝
+        console.log(obj2);
+    </script>
+</body>
+</html>

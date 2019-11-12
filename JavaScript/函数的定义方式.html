@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 1、函数声明
+		/*function fn() {
+			console.log('test');
+		}
+		fn();*/
+
+		// 2、函数表达式
+		/*var fn1 = function() {
+			console.log('test');
+		}*/
+
+		// 函数声明和函数表达式的区别
+		/*fn();
+		function fn() {
+			console.log('test');
+		}
+		
+		fn1();
+		var fn1 = function() {
+			console.log('test');
+		}*/
+		// fn1()会报错,函数声明会提前，下面那个只提前变量声明
+		
+
+		// 根据条件声明函数
+		// 现代浏览器 不会提升if语句中的函数声明
+		// 在老的ie版本中，会提升函数声明，输出fn-false
+		/*if(true) {
+			function fn() {
+				console.log('fn-true');
+			}
+		} else {
+			function fn() {
+				console.log('fn-false');
+			}
+		}
+		fn();*/
+		// 改进：使用函数表达式
+
+		// 3、 new Function()
+		var fn = new Function('var name = "张三";console.log(name)');
+		fn();
+		// 执行速度慢,所以几乎不用
+		// 但这个fn是一个对象  -->函数也是对象
+		var fn1 = new Function('a', 'b', 'console.log(a + b)');
+		fn1(1, 2);
+	</script>
+</body>
+</html>

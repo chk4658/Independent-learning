@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="button" value="addEventListener" id="btn">
+
+	<script type="text/javascript">
+		var btn = document.getElementById('btn');
+		/*btn.onclick = function() {
+			alert('第一种方式');只有事件冒泡
+            // 无法给同一个对象的同一个事件注册多个事件处理函数                     
+		}*/
+
+
+		btn.addEventListener('click', function(){
+			// 这个方法的第三种参数默认false，表示事件冒泡
+			// 当第三个参数时true时，表示事件捕获
+			alert('第二种方式');
+			alert('可以给同一个对象的同一个事件注册多个事件处理函数');
+			// 存在浏览器兼容性问题 i9以后才支持
+		})
+
+
+        /*btn.attachEvent('onclick', function() {
+        	alert('第三种方式');只有事件冒泡
+        })
+        btn.attachEvent('onclick', function() {
+        	alert('浏览器兼容性问题，只支持i6-i10');
+        })*/
+	</script>
+</body>
+</html>

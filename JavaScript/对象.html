@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		// 创建对象
+		// 第一种方式，对象字面量
+		/*var student = {
+			name: '张三',
+			age: 18,
+			place: ['江苏','扬州'],
+			study: function() {
+				console.log(this.name + ':该去学习了');
+			},
+			sleep: function() {
+				console.log(this.name + ':睡觉');
+			}
+		}
+		console.log(student.age);
+		// 属性的另一个访问方式
+		console.log(student['name']);
+		// 方法的调用，对象.方法名
+		student.sleep();*/
+
+		// 第二种方式 new Object()
+		// Object是一个构造函数
+		// 构造函数的调用，使用new的方式
+		/*var student = new Object();
+		// 创建了一个空的对象
+		// js可以动态增加属性
+		student.name = '李四';
+		student.age = 18;
+        student.place = ['甘肃','兰州'];
+        student.study = function() {
+        	console.log(this.name + ':该去学习了');        
+        }
+        student.study();*/
+
+        // 第三种方式  工厂方法
+        /*function createStudent(name, age, place) {
+        	var student = new Object();
+        	student.name = name;
+		    student.age = age;
+            student.place = place;
+            student.study = function() {
+            	console.log(this.name + ':该去学习了'); 
+            }
+            return student;
+        }
+        var stu1 = createStudent('王五',25,['甘肃','兰州']);
+        var stu2 = createStudent('赵六',35,['甘肃','兰州']);*/
+
+        // 第四种方式  自定义构造函数
+        // 帕斯卡命名  第一个单词首字母大写，后续的每一个单词的首字母都大写
+        function Student(name,age,place) {
+        	this.name = name;
+        	this.age = age;
+        	this.place = place;
+        	this.study = function() {
+            	console.log(this.name + ':该去学习了'); 
+            }
+        }
+        var stu1 = new Student('王五',25,['甘肃','兰州']);
+        stu1.study(); 
+
+
+        // this出现在以下位置
+        /*1、函数中 --- this指向windows
+        2、在方法中 --- this指向的是这个方法所属的对象
+        3、在构造函数中 --- this就是构造函数创建的对象*/
+
+
+        // 删除对象的成员
+        delete stu1.name;
+        // for in  可以遍历对象的成员
+        for(var key in stu1){
+        	console.log(key + '---' + stu1[key]);
+        }
+
+
+        // 内置对象  Math  date
+
+        /*var d = new Date();
+        console.log(d);*/
+
+        /*var d = new Date(49256458456);
+        console.log(d)*/
+
+        /*var d = new Date('1988-8-8 8:8:8');
+        var d = new Date('1988/8/8 8:8:8');
+        console.log(d)*/
+
+        var d = new Date(1928,2,5);
+        console.log(d);
+        // 获取日期对象的毫秒值
+        console.log(d.valueOf());
+        console.log(d.getTime());
+        console.error('asdhaj');
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

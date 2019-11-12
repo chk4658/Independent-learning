@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var num1 = 5;
+		// alert(num1);
+		console.log(num1);
+		// 5被存入内存，变量num1可以获取到内存中存储的数据
+		
+		var msg = 'hello world!';
+		console.log(msg);/*输出到控制台，浏览器的控制台*/
+
+		// 在声明变量的时候没有确定变量的类型
+		msg = 16;
+
+		// 简单数据类型
+		// Number  整数 浮点数
+		console.log(0.1+0.2);
+		// String
+		// Boolean
+		// Undefined未声明时默认是这个
+		// Null
+
+		// 字符串颜色是黑色 数值类型，布尔类型是蓝色 undefined和null是灰色 
+
+		// 复杂数据类型
+		// Object
+        
+        // 返回变量的数据类型,返回类型是string
+        console.log(typeof msg);
+        var result = typeof msg;
+        console.log(typeof result);
+
+        // 转换成字符串类型
+
+       /*1、toString（）方法   用的更多
+        null和Undefined没有这个方法*/
+        console.log(typeof msg.toString());
+        // 2、String（）方法
+        console.log(typeof String(num1));
+        // 3、字符串拼接
+        console.log(typeof (num1 + ''));
+
+        // 转换成数值类型
+
+        // 1、Number（）方法
+        console.log(Number('asda'));/*NaN不是一个数字*/
+        console.log(Number(true));/*1*/
+        console.log(Number('123'));/*输出数值123*/
+        console.log(Number('123abc'));/*NaN*/
+        // 2、parseInt（）方法
+        console.log(parseInt('123'));/*123*/
+        console.log(parseInt(false));/*NaN*/
+        // 无法转换布尔类型
+        console.log(parseInt('abc'));/*NaN*/
+        console.log(parseInt('12ab3c'));/*12*/
+        console.log(parseInt('12.67'));/*12*/
+        // 遇到数字就会转换数字，遇到非数字就返回
+        // 3、parseFloat（）方法
+        console.log(parseFloat('123.67'));/*123.67*/
+        console.log(parseFloat(true));/*NaN*/
+        console.log(parseFloat('123.12.12abc'));/*123.12*/
+        console.log(parseFloat('123'));/*123*/
+        // 4、取正或者取负+-或者减0
+        console.log(+'13');/*13*/
+        console.log(+'123abc');/*NaN*/
+        console.log(+false);/*0*/
+        console.log('133'-0);/*133*/
+        console.log('133'+0);/*字符串1330*/
+
+        // 转换成布尔类型
+        
+        var b;
+        console.log(Boolean('abc'));/*true*/
+        console.log(Boolean(123));/*true*/
+        console.log(Boolean(null));/*false*/
+        console.log(Boolean(b));/*false*/
+        console.log(Boolean(0));/*false*/
+        console.log(Boolean(''));/*false*/
+        console.log(Boolean(NaN));/*false*/
+
+        var c = 10;
+        var d = '10';
+        console.log(c == d);/*判断的是变量的值*/
+        console.log(c === d);/*先判断类型，再判断值*/
+
+        if(c){/*转换成false的情况: 0  '' 空字符串  NaN  null  undefined*/
+        	console.log('boolean类型的隐式类型转换');
+        }
+
+        console.log(!d);/*false*/
+
+        // prompt(message?: DOMString, default?: DOMString)
+        var ss = prompt('输出询问', '请在此输出');
+        // 返回的是输入的值
+        console.log(ss);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

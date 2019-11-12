@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    闭包案例及自定义属性的使用
+    <div id="box">
+        <button size="12">12号字体</button>
+        <button size="14">14号字体</button>
+        <button size="16">16号字体</button>
+    </div>
+    <script>
+        function makeFun(size) {
+            return function() {
+                document.body.style.fontSize = size + 'px';
+            }
+        }
+        var box = document.getElementById('box');
+        var buttons = box.children;
+        for(var i = 0; i < buttons.length; i++) {
+            var btn = buttons[i];
+            // 获取自定义属性,btn.size在很多浏览器中时获取不到的
+            var size = btn.getAttribute('size');
+            btn.onclick = makeFun(size);
+        }
+    </script>
+</body>
+</html>

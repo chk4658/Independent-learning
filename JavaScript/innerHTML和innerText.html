@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box">这是一个div
+		<span>这是一个span</span>
+	</div>
+
+	<script type="text/javascript">
+		var box = document.getElementById('box');
+		// innerHTML，innerText  获取开始标签和结束标签之间的内容
+
+		// innerHTML获取内容的时候，如果内容中有标签，会获取到标签页
+		// 获取的是原封不动的内容
+		console.log(box.innerHTML);
+		// innerText会把前后的换行和空格都去掉
+		console.log(box.innerText);
+	</script>
+</body>
+</html>

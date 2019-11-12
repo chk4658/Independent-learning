@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.title {
+			margin-top: 200px;
+			text-align: center;
+		}
+		.time-item {
+			margin: 0 auto;
+			text-align: center;
+			width: 450px;
+			height: 50px;
+			font-size: 30px;
+		}
+		span {
+			line-height: 50px;
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="title">距离国庆节，还有</h1>
+
+	<div class="time-item">
+		<strong><span id="day">00</span>天</strong>
+		<strong><span id="hour">00</span>时</strong>
+		<strong><span id="minute">00</span>分</strong>
+		<strong><span id="second">00</span>秒</strong>
+	</div>
+
+
+	<script src="common.js"></script>
+	<script type="text/javascript">
+		var end = new Date('2019/10/1 00:00:00').getTime();
+		var spanDay = my$('day');
+		var spanHour = my$('hour');
+		var spanMinute = my$('minute');
+		var spanSecond = my$('second');
+
+        setInterval(countdown, 1000);
+        // 为了避免1s后才执行
+        countdown();
+		function countdown() {
+			var start = Date.now();/*new Date()*/
+			var interval = getInterval(start, end);
+			var day = interval.day,
+                hour = interval.hour,
+                minute = interval.minute,
+                second = interval.second;
+
+            day = day < 10 ? '0' + day : day;
+            hour = hour < 10 ? '0' + hour : hour;
+            minute = minute < 10 ? '0' + minute : minute;
+            second = second < 10 ? '0' + second : second;
+
+            setInnerText(spanDay, day);
+            setInnerText(spanHour, hour);
+            setInnerText(spanMinute, minute);
+            setInnerText(spanSecond, second);
+		}
+	</script>
+</body>
+</html>

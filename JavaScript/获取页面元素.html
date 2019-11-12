@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="container">
+		<div>3243222</div>
+		<div>5453453</div>
+		<p>ppp</p>
+		<span>spanspan</span>
+	</div>
+	<div class="main">hello</div>
+	<p class="main">sd s</p>
+
+	<script type="text/javascript">
+		// 根据id获取
+		// var container = document.getElementById('container');
+		// 根据标签名获取
+		// var divs = container.getElementsByTagName('div');
+		// console.log(divs);
+        // i9以上才支持的根据类名获取
+        // var main = document.getElementsByClassName('main');
+        // console.log(main);
+
+		// 根据选择器来查找元素  i8以后支持
+		/*var container = document.querySelector('#container');
+		console.log(container);*/
+		// 只能获取到一个类名选择器
+		var element = document.querySelector('.main');
+		console.log(element);
+		// 获取到所有class=main的选择器
+		var elements = document.querySelectorAll('.main');
+		console.log(elements);
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*function Hero (name, blood, weapon) {
+		    this.name = name;
+		    this.blood = blood;
+	        this.weapon = weapon;
+	        this.attack = attack;
+	    }
+	    // 防止多次在内存中新建function
+	    function attack() {
+            console.log(this.weapon + '攻击敌人');
+	    }
+	    var hero1 = new Hero('刘备', 100, '🗡');
+	    var hero2 = new Hero('关羽', 100, '🔪');
+	    hero1.attack();
+	    hero2.attack();*/
+
+	    // 每一个构造函数都有一个属性  原型 / 原型对象 prototype
+	    function Hero (name, blood, weapon) {
+		    this.name = name;
+		    this.blood = blood;
+	        this.weapon = weapon;
+	    }
+
+	    Hero.prototype.attack = function(){
+	    	console.log(this.weapon + '攻击敌人'); 
+	    };
+
+	    var hero1 = new Hero('刘备', 100, '🗡');
+	    var hero2 = new Hero('关羽', 100, '🔪');
+	    hero1.attack();
+
+	    console.log(hero1.attack === hero2.attack);
+
+	    console.dir(hero1);
+	    // __proto__ 
+	    // hero1.__proto__对象的__proto__等于构造函数的Hero.prototype
+	    // __proto__非标准的属性
+	    // 当调用对象的属性或者方法的时候,先去找对象本身的属性/方法，如果对象中没有，就去原型对象中调用,如果都没有就报错
+	    console.dir(Hero.prototype);
+
+	    // constructor 作用记录了创建该对象的构造函数
+	    console.log(hero1.constructor === Hero);
+	</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var a = 123;
+		function fn() {
+			console.log(this.a);
+		}
+		window.fn();
+		// bind方法 ES5新增的方法
+		// 新建一个方法，bind中第一个参数可以改变函数中this的指向
+		var o = {a: 'abc'};
+		var fn1 = fn.bind(o);
+		fn1(); /*相当于o.fn();*/
+	</script>
+</body>
+</html>

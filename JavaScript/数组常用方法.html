@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var d = [9, 5, 6, 7, 8];
+		console.log(d instanceof Array);
+        // instanceof判断是不是某数据类型
+        console.log(Array.isArray(d));
+        // 有浏览器兼容问题
+
+        // 把数组转换成字符串，逗号分隔每一项 
+        console.log(d.toString());
+
+        // 返回数组对象本身
+        console.log(d.valueOf());
+
+        /*1、栈操作（先进后出）
+
+        push()
+        pop()   取出数组中的第一个元素，修改length属性
+
+        2、队列操作（先进先出）        
+        push()
+        shift()   取出数组中的第一个元素，修改length属性
+        unshift()   在数组最前面插入项，返回数组的长度
+
+        3、排序方法
+        reverse()   翻转数组
+        sort()   即使是数组sort也是根据字符，从小到大排序*/
+
+        /*d.push(1,1,1);在数组后面加，返回值就是改变后的数组长度
+        console.log(d);*/
+        /*d.pop();弹走数组最后一个元素，返回的是数组的最后一个元素
+        console.log(d)*/
+
+        /*d.shift();
+        console.log(d);删除数组第一个元素，返回第一个元素*/
+        /*d.unshift(21);
+        console.log(d);在数组第一个前面插入一个元素*/
+
+        /*d.reverse();
+        console.log(d);*/
+
+        /*d.sort();
+        // 字符编码的排序
+        console.log(d);*/
+
+        function compare(a,b) {
+        	return a - b;
+        }
+        d.sort(compare);
+        console.log(d);
+
+        var arr = ['abc','ab','a','abcd','cd'];
+        arr.sort(function(a,b) {
+        	return a.length - b.length;
+        	// 按字符个数从小到大排序
+        })
+        console.log(arr);
+
+        // 4、操作方法
+        // concat()    把参数拼接到当前数组
+        // slice()      从当前数组中截取一个新的数组，start从0开始，end从1开始
+        // splice()    删除或替换当前数组的某些项目
+
+        // 5、位置方法
+        // indexof()    从数组中从前往后找元素在数组中的位置，没找到返回-1
+        // lastindexof()     从后往前
+
+        // 6、迭代方法    不会修改原数组
+        // every()、filter()、foreach()、map()、some()
+
+        // 7、方法将数组的所有元素连接到一个新的字符串中
+        // join()
+
+
+        // 清空数组的方法
+        // 1、使数组为空 arr = []  推荐
+        // 2、使数组长度为0  arr.length = 0
+        // 3、arr.splice(start: int, deleteCount: int, items...: any)
+              // arr.splice(0,arr.length)
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

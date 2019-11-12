@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#ul {
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<ul id="ul">
+		<li>东</li>
+		<li>南</li>
+		<li>西</li>
+		<li>北</li>
+		<li>中</li>
+	</ul>
+
+	<script type="text/javascript">
+		// 事件委托
+		var ul = document.getElementById('ul');
+        ul.onclick = function(e) {
+        	// e事件参数（事件对象）:当事件发生的时候，可以获取一些和事件相关的数据
+        	// 老版本ie中获取事件对象的方式 window.event
+        	e = e || window.event;
+
+        	// e.target 是真正触发事件的对象
+        	// 有浏览器兼容性问题，老版本ie中  srcElement
+        	e.target = e.target || e.srcElement
+        	// console.log(e.target);
+
+        	// 事件的阶段：1、捕获阶段 2、目标阶段 3、冒泡阶段
+        	// console.log(e.eventPhase);
+
+        	// e.currentTarget:事件处理函数所属的对象
+        	// console.log(e.currentTarget);
+
+        	// 获取事件的名称,这里就是click
+        	// console.log(e.type);
+
+        	// clientS,clientY获取的是鼠标在浏览器可视区域的坐标
+        	// console.log(e.clientX);
+        	// console.log(e.clientY);
+
+            // 鼠标在当前页面的位置
+        	// console.log(e.pageX);
+        	// console.log(e.pageY);
+
+
+
+            // 取消冒泡的两种方式
+            // e.stopPropagation();
+            // 停止事件传播  取消冒泡
+            // 标准的DOM方法
+
+            // e.cancelBubble = true;
+            // 取消冒泡  非标准的方式  老版本IE支持
+
+        	e.target.style.backgroundColor = '#ddd';
+        }
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="txt">
+
+	<script type="text/javascript">
+		// 键盘事件
+		// keydown  键盘按下的时候
+		// keyup    键盘弹起的时候
+		// 区别:keydown的时候按的键还没有落入文本框,keyup已经落入文本框
+		var txt = document.getElementById('txt');
+		txt.onkeydown = function(e) {
+			e = e || window.event;
+			// e.keyCode  键盘码 48到57是数字
+			console.log(e.keyCode);
+
+			if((e.keyCode < 48 || e.keyCode > 57) && e.keyCode !== 8) {
+				// return false;后续代码会不执行
+				e.preventDefault();
+			}
+		}
+	</script>
+</body>
+</html>

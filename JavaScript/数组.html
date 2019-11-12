@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var names = ['zs','ls','ww'];
+		console.log(names[0]);
+
+		// 数组存储的数据类型可以不一样,但是不推荐
+		var chs = ['as','rrr',188,true];
+		console.log(chs);
+		// 获取数组的长度
+		console.log(chs.length);
+
+		// 数组的长度可以动态改变
+		chs[4] = 'ds';
+		console.log(chs); /*["as", "rrr", 188, true, "ds"]*/
+
+		chs[6] = 'sdasd';
+		console.log(chs);/*["as", "rrr", 188, true, "ds", empty, "sdasd"]*/
+		// 清空数组
+		// chs.length = 0;
+
+		// 把找到的非0元素存储到一个新的数组中
+		var newArray = [];/*空数组*/
+		var numbers = [54,5,549,5,0,0,5489,497,5];
+		for (var i = 0;i < numbers.length;i++){
+			if(numbers[i] !== 0){
+				newArray[newArray.length] = numbers[i];
+			}
+		}
+		console.log(newArray);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

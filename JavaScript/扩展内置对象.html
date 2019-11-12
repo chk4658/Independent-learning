@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 求数组中所有偶数的和
+		var array = [5, 4, 5, 6, 9];
+		Array.prototype.getSum = function () {
+			var sum = 0;
+			for (var i = 0; i < this.length; i++) {
+				if(this[i] % 2 === 0) {
+					sum += this[i];
+				}
+			}
+			return sum;
+		}
+		console.log(array.getSum());
+	</script>
+</body>
+</html>

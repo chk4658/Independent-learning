@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.all {
+			position: relative;
+			width: 500px;
+			height: 200px;
+			padding: 5px;
+			margin: 200px auto;
+			border: 1px solid #ccc;
+		}
+		.screen {
+			position: relative;
+			width: 500px;
+			height: 200px;
+			overflow: hidden;
+		}
+		.screen ul {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 3000px;
+		}
+		.screen ul li {
+			float: left;
+			width: 500px;
+			height: 200px;
+		}
+		li {
+			list-style: none;
+		}
+		#arr {
+			display: none;
+		}
+		#left, #right {
+			width: 28px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			color: #fff;
+			font-size: 24px;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			background-color: rgba(0, 0, 0, 0.2);
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
+			cursor: pointer;
+		}
+		#left {
+			left: 5px;
+		}
+		#right {
+			right: 5px;
+		}
+		ol {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+		ol li {
+			background: rgba(0, 0, 0, 0.3);
+			width: 18px;
+			height: 18px;
+			float: left;
+			margin: 5px;
+			text-align: center;
+			line-height: 18px;
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
+			cursor: pointer;
+			color: #fff;
+		}
+		.current {
+			background-color: #aaa;
+		}
+	</style>
+</head>
+<body>
+	<div class="all" id="box">
+		<div class="screen">
+			<ul>
+				<li><img src="images/wf1.jpg"></li>
+				<li><img src="images/wf2.jpg"></li>
+				<li><img src="images/wf3.jpg"></li>
+				<li><img src="images/wf4.jpg"></li>
+				<li><img src="images/wf5.jpg"></li>
+			</ul>
+			<ol>
+			</ol>
+		</div>
+		<div id="arr">
+			<span id="left">&lt;</span>
+			<span id="right">&gt;</span>
+		</div>
+	</div>
+
+		<script src="animate.js"></script>
+	<script type="text/javascript">
+		var box = document.getElementById('box');
+		var screen = box.children[0];
+		var ul = screen.children[0];
+		var ol = screen.children[1];
+		var arr = document.getElementById('arr');
+		var arrLeft = document.getElementById('left');
+		var arrRight = document.getElementById('right');
+		var imgWidth = screen.offsetWidth;
+        
+		// 1、动态生成序号
+		var count = ul.children.length;
+		for(var i = 0; i < count; i ++) {
+			var li = document.createElement('li');
+			ol.appendChild(li);
+			li.innerText = i + 1;
+			if(i === 0) {
+				li.className = 'current';
+			}
+
+			// 2、点击序号 以动画的方式 切换图片
+			li.onclick = liClick;
+			// 当前li要记录其索引
+			// 设置标签的自定义属性
+			li.setAttribute('index', i);
+		} 
+		function liClick() {
+			// 取消其他li的高亮显示，让当前li高亮显示
+			for(var i = 0; i < ol.children.length; i ++) {
+				var li = ol.children[i];
+				li.className = '';
+			}
+			this.className = 'current';
+			// 点击序号，以动画的方式切换到当前点击的图片位置
+			// this.getAttribute('index')是字符串形式
+			var liIndex = parseInt(this.getAttribute('index'));
+			animate(ul, - liIndex * imgWidth);
+            index = liIndex;
+		}
+
+		// 3、鼠标放到盒子上显示箭头
+		box.onmouseenter = function() {
+			arr.style.display = 'block';
+            // 清除自动切换图片定时器
+            clearInterval(timeId);
+		}
+		box.onmouseleave = function() {
+			arr.style.display = 'none';
+            // 自动开启自动切换图片定时器
+            timeId = setInterval(function() {
+                arrRight.click();
+            }, 2000);
+		}
+
+		// 4、实现上一张和下一张的功能
+		var index = 0;
+		arrRight.onclick = function() {
+            // 如果当前是克隆的第一张图片，就修改li的坐标
+            if(index === count) {
+                ul.style.left = '0px';
+                index = 0;
+            }
+            // 5张图片。还有一张是克隆的,总共是6
+            index ++;
+			if(index < count) {
+		        // animate(ul, -imgWidth * index);
+                // 模拟点击事件 li.click()
+                ol.children[index].click();
+			} else {
+                animate(ul, -index * imgWidth);
+                // 取消所有序号的高亮显示，让第一序号高亮显示
+                for (var i = 0; i < ol.children.length; i++) {
+                    var li = ol.children[i];
+                    li.className = '';
+                }   
+                ol.children[0].className = 'current';      
+            }
+		}
+        arrLeft.onclick = function() {
+            // 如果当前是第一张，要切到克隆的那一张 
+            if (index === 0) {
+                index = count;
+                ul.style.left = -index * imgWidth + 'px';
+            }
+            /*if(index > 0) {
+                index --;
+                // animate(ul, -imgWidth * index);
+                ol.children[index].click();
+            }*/
+            index --;
+            ol.children[index].click();
+        }
+        // 无缝滚动
+        var firstLi = ul.children[0];
+        // 克隆li cloneNode()复制节点
+        // 参数为true时,复制节点的内容，false只复制节点，不复制内容
+        var cloneLi = firstLi.cloneNode(true);
+        ul.appendChild(cloneLi);
+
+		// 5、自动切换图片
+        var timeId = setInterval(function() {
+            arrRight.click();
+        }, 2000)
+	</script>
+</body>
+</html>

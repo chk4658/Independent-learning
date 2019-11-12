@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#box {
+			width: 200px;
+			height: 200px;
+			background-color: #f00;
+		}
+		.show {
+			display: block;
+		}
+		.hidden {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" id="btn" value="隐藏">
+	<br>
+	<div id="box"></div>
+
+	<script type="text/javascript">
+		var btn = document.getElementById('btn');
+		var isShow = true;
+		btn.onclick = function() {
+			var box = document.getElementById('box');
+			if(isShow) {
+				/*DOM对象对应的标签的class属性的名字叫做className，因为class在js中是关键字，关键字不可以作为变量或者属性的名字*/
+                box.className = 'hidden';
+                // btn.value = '显示';
+                this.value = '显示';
+                isShow = false;
+			}else {
+				box.className = 'show';
+				this.value = '隐藏';
+				isShow = true;
+			}
+		}
+
+
+		// this的几种情况
+		// 1、普通函数中的this -> windows
+		// 2、构造函数中的this -> 是当前构造函数创建的对象
+		// 3、方法中的this -> 方法所属的对象
+		// 4、事件处理函数中的this -> 事件源
+	</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<a id="link" href="http://www.baidu.com">百度</a>
+	<script type="text/javascript">
+		var link = document.getElementById('link');
+		link.onclick = function(e) {
+			alert('dianji');
+			// 取消a标签的默认行为(跳转到href)
+			return false;
+
+			// DOM标准方法
+			// e.preventDefault();
+
+			// IE的老版本，非标准方法
+			// e.returnValue = false;
+		}
+	</script>
+</body>
+</html>
