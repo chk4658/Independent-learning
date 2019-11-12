@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?eemh1b');
+  src:  url('fonts/icomoon.eot?eemh1b#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?eemh1b') format('truetype'),
+    url('fonts/icomoon.woff?eemh1b') format('woff'),
+    url('fonts/icomoon.svg?eemh1b#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-video-camera:before {
+  content: "\e914";
+}
+.icon-books:before {
+  content: "\e920";
+}
+.icon-cart:before {
+  content: "\e93a";
+}
+.icon-location:before {
+  content: "\e947";
+}
+.icon-display:before {
+  content: "\e956";
+}
+.icon-mobile2:before {
+  content: "\e959";
+}
+.icon-aid-kit:before {
+  content: "\e998";
+}
+.icon-mug:before {
+  content: "\e9a2";
+}
+.icon-airplane:before {
+  content: "\e9af";
+}
+.icon-sina-weibo:before {
+  content: "\ea9a";
+}
+.icon-chrome:before {
+  content: "\ead9";
+}
+.icon-firefox:before {
+  content: "\eada";
+}
+.icon-edge:before {
+  content: "\eadc";
+}
+.icon-ctrl:before {
+  content: "\ea50";
+}
+.icon-coin-yen:before {
+  content: "\e93e";
+}
+.icon-search:before {
+  content: "\e986";
+}
+.icon-cross:before {
+  content: "\ea0f";
+}
+.icon-ctrl1:before {
+  content: "\ea51";
+}
+.icon-github:before {
+  content: "\eab0";
+}

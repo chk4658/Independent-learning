@@ -1,0 +1,210 @@
+/*版心设置*/
+.w {
+	width: 1190px;
+	margin: 0 auto;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+img {
+	/*图片底侧有空白空隙问题*/
+	vertical-align: top;
+}
+a {
+	text-decoration: none;
+	color: #999;
+	font-size: 12px;
+}
+a:hover {
+	color: #6bbcfa;
+}
+blockquote,body,button,dd,dl,dt,fieldset,form,h1,h2,h3,h4,h5,h6,hr,input,legend,li,ol,p,pre,td,textarea,th,ul {
+	margin: 0;
+	padding: 0;
+}
+input, button {
+	border: 0;
+	outline: none;
+	/*取消轮廓边框*/
+}
+ul {
+	list-style: none;
+}
+body {
+	background-color: #f6f6f6;
+}
+.sty {
+	color: #6bbcfa!important;
+}
+/*字体图标的引入*/
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?7kkyc2');
+  src:  url('../fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?7kkyc2') format('truetype'),
+    url('../fonts/icomoon.woff?7kkyc2') format('woff'),
+    url('../fonts/icomoon.svg?7kkyc2#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*通栏头部*/
+header {
+	background-color: #000;
+	height: 80px;
+}
+/*快速导航栏*/
+.shortcut {
+	background-color: #e3e4e5;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #ddd;
+}
+.city {
+	margin-left: 200px;
+}
+.shortcut li {
+	float: left;
+}
+.shortcut i {
+	font-family: "icomoon";
+	font-style: normal;
+	color: #ccc;
+}
+.space {
+	height: 10px;
+	width: 1px;
+	background-color: #ccc;
+	margin: 12px 12px 0;
+}
+/*中间部分*/
+.middle {
+	height: 140px;
+	position: relative;
+}
+.logo {
+	position: absolute;
+    top: -30px;
+    box-shadow: 0px -5px 10px rgba(0,0,0,.3);
+}
+.logo a {
+	display: block;
+	width: 190px;
+	height: 170px;
+	background: #fff url(../images/logo.png) no-repeat;
+}
+/*搜索部分*/
+.form {
+	width: 550px;
+	height: 35px;
+	position: absolute;
+	top: 25px;
+	left: 320px;
+}
+.form input {
+	width: 495px;
+	height: 33px;
+	border: 1px solid #6bbcfa;
+	float: left;
+	font-size: 14px;
+	padding-left: 3px;
+}
+.form button {
+	width: 50px;
+	height: 35px;
+	background-color: #6bbcfa;
+	float: left;
+}
+.form button i {
+	font-family: "icomoon";
+	font-style: normal;
+    color: #fff;
+}
+/*购物车*/
+.shoppingcar {
+	width: 188px;
+	height: 33px;
+	border: 1px solid #ccc;
+	position: absolute;
+	top: 25px;
+	right: 95px;
+	line-height: 33px;
+	text-align: center;
+    color: #6bbcfa;
+}
+.shoppingcar i {
+	font-family: "icomoon";
+	font-style: normal;
+	margin-right: 5px;
+}
+.shoppingcar span {
+	width: 15px;
+	height: 15px;
+	background-color: #6bbcfa;
+	border-radius: 50%;
+	position: absolute;
+	top: 8px;
+	right: 33px;
+	line-height: 15px;
+	font-size: 12px;
+	color: #fff;
+}
+/*热点关键词*/
+.hotwords {
+	position: absolute;
+	top: 68px;
+	left: 320px;
+}
+/*小导航栏部分*/
+.navitems {
+	width: 770px;
+	height: 40px;
+	position: absolute;
+	bottom: 0;
+	left: 200px;
+	line-height: 40px;
+}
+.navitems li {
+	float: left;
+	margin-left: 30px;
+}
+.navitems li a {
+	font-size: 16px;
+	font-weight: 700;
+	color: #555;
+}
+.navitems li a:hover {
+	color: #6bbcfa;
+}
+.navitems .space {
+	height: 12px;
+    margin: 14px -15px 0 15px;
+}
+/*页面底部部分*/
+footer {
+	height: 158px;
+	background-color: #eaeaea;
+	margin-top: 80px;
+	/* 35px */
+}
+/*最底部版权部分*/
+.copyright {
+	padding-top: 20px;
+	text-align: center;
+	color: #666;
+	font-size: 12px;
+}
+.copyright a {
+	color: #666;/*a要单独设置*/
+}
+.copyright span {
+	margin: 0 10px;
+}
+.copyright div p {
+	line-height: 22px;
+}
+.copyright div {
+	margin-top: 19px;
+}
