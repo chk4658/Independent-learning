@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		img {
+			animation: car 4s infinite;
+		}
+		@keyframes car {
+			0% {
+				transform: translate3d(0,0,0);
+			}
+			50% {
+				transform: translate3d(1000px,0,0);
+			}
+			51% {
+				transform: translate3d(1000px,0,0) rotateY(180deg);
+				/*如果有多组变形  都属于transform 用空格隔开就好了*/
+			}
+			100% {
+				transform: translate3d(0,0,0) rotateY(180deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<img src="images/car.jpg" width="100px">
+</body>
+</html>

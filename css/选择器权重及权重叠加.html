@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {/*通配符选择器0*/
+			color: black;
+		}
+		.king {/*类选择器 0,0,1,0*/
+			color: red;
+		}
+		div {/*标签选择器 0,0,0,1*/
+			color: pink;
+		}
+		:first-child {/*伪类选择器 0,0,1,0*/
+			color: green;
+		}
+		#wang {/*id选择器 0,1,0,0*/
+			color: blue;
+		}
+		/* div {
+			color: orange!important;权重无穷大，但不是选择器
+		}
+		 */
+
+		ul {/*0,0,0,1*/
+			color: #ccc;
+		}
+		ul li {/*0,0,0,1+0,0,0,1=0,0,0,2*/
+			color: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="king" id="wang" style="color: skyblue"> 艾菲奖哈 </div>
+	<!-- 行内样式权重1,0,0,0 -->
+
+	<!-- 权重是可以叠加的 -->
+	<nav>
+		<ul>
+			<li>权重叠加</li>
+			<!-- 继承过来的权重为0 -->
+			<li>权重叠加</li>
+			<li>权重叠加</li>
+		</ul>
+	</nav>
+</body>
+</html>

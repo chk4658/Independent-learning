@@ -1,0 +1,305 @@
+.box {
+	width: 400px;
+	height: 600px;
+	margin: 50px auto;
+	border: 1px solid #f00;
+	position: relative;
+}
+.x-body {
+	width: 250px;
+	height: 400px;
+	border: 5px solid #000;
+	background-color: yellow;
+	border-radius: 125px;
+	position: absolute;
+	top: 50%;/*距父盒子上边缘50%*父盒子高度的长度*/
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/*移动距离相对于自身*/
+	overflow: hidden;/*可以使超出的裤子部分和肩带部分隐藏*/
+}
+.x-hair1,.x-hair2 {
+	width: 130px;
+	height: 100px;
+	border-radius: 50%;
+	border-top: 10px solid #000;
+	position: absolute;
+	left: 91px;
+	top: 77px;
+}
+.x-hair1 {
+	transform: rotate(45deg);
+	transform-origin: 77px 55px;
+}
+.x-hair2 {
+	transform: rotate(45deg);
+	transform-origin: 94px 45px;
+}
+.x-hand-l,.x-hand-r {
+	width: 100px;
+	height: 100px;
+	border: 5px solid #000;
+	position: absolute;
+	top: 300px;
+	border-radius: 25px;
+	background-color: yellow;
+	z-index: -1;/*让它被盖住*/
+}
+.x-hand-l {
+	left: 50px;
+	transform: rotate(30deg);
+}
+.x-hand-r {
+	right: 50px;
+	transform: rotate(-30deg);
+}
+.x-hand-l::after,.x-hand-r::after {
+	content: "";
+	width: 50px;
+	height: 10px;
+	background: #000;
+	position: absolute;
+	border-radius: 5px;
+}
+.x-hand-l::after {
+    left: -3px;
+    transform: rotate(90deg);
+    top: 52px;
+}
+.x-hand-r::after {
+    left: 50px;
+    transform: rotate(90deg);
+    top: 55px;
+}
+.x-foot-l,.x-foot-r {
+	width: 40px;
+	height: 60px;
+	background: #000;
+	position: absolute;
+	z-index: -1;
+}
+.x-foot-l {
+	left: 150px;
+	top: 490px;
+}
+.x-foot-r {
+	right: 150px;
+	top: 490px;
+}
+.x-foot-l::after,.x-foot-r::after {
+	content: "";/*行内元素*/
+	width: 60px;
+	height: 40px;
+	background: #000;
+	border-radius: 20px;
+	position: absolute;
+}
+.x-foot-l::after {
+	left: -20px;
+	bottom: 0px;
+}
+.x-foot-r::after {
+	right: -20px;
+	bottom: 0px;
+}
+.x-eyes {
+	position: absolute;
+	top: 60px;
+	left: 25px;
+}
+.x-eyes-l,.x-eyes-r {
+	width: 90px;
+	height: 90px;
+	border: 5px solid #000;
+	border-radius: 50%;
+	background: #fff;
+	float: left;
+}
+.x-eyes-l::after,.x-eyes-r::after {/*眼镜框*/
+    content: "";
+    width: 30px;
+    height: 20px;
+    position: absolute;
+    background: #000;
+} 
+.x-eyes-l::after {
+	left: -26px;
+	top: 35px;
+	transform: rotate(15deg);
+}
+.x-eyes-r::after {
+	right: -26px;
+	top: 35px;
+	transform: rotate(-15deg);
+}
+.x-l-black,.x-r-black {
+	width: 50px;
+	height: 50px;
+	background: #000;
+	border-radius: 50%;
+	position: absolute;
+}
+.x-l-black {
+	left: 25px;
+	top: 25px;
+}
+.x-r-black {
+    right: 25px;
+    top: 25px;
+}
+.x-l-white,.x-r-white {
+	width: 20px;
+	height: 20px;
+	background: #fff;
+	border-radius: 50%;
+	position: absolute;
+}
+.x-l-white {
+	left: 50px;
+	top: 40px;
+}
+.x-r-white {
+	right: 50px;
+	top: 40px;
+}
+.x-mouth {
+	width: 60px;
+	height: 35px;
+	border: 5px solid #000;
+	position: absolute;
+	left: 90px;
+	top: 187px;
+	transform: rotate(-35deg);
+	border-radius: 0 0 0 20px;
+	background: #fff;
+}
+.x-mouth::after {
+	content: "";
+	width: 83px;
+	height: 40px;
+	background: yellow;
+	position: absolute;
+	border-bottom: 5px solid #000;
+	transform: rotate(35deg);
+	left: 0px;
+	top: -23px;
+}
+.x-trousers {
+	width: 100%;
+	height: 150px;
+	position: absolute;
+	top: 260px;
+}
+.x-trousers-top {
+	width: 150px;
+	height: 50px;
+	background: blue;
+	border: 5px solid #000;
+	border-bottom: none;
+	position: absolute;
+	left: 45px;
+	z-index: 2;
+}
+.x-trousers-bottom {
+	width: 100%;
+	height: 150px;
+	background: blue;
+	position: absolute;
+	top: 50px;
+	border-radius: 0 0 125px 125px;
+	border-top: 5px solid #000;
+}
+.x-trousers-tl,.x-trousers-tr {
+	width: 100px;
+	height: 20px;
+	border: 5px solid #000;
+	background: blue;
+	position: absolute;
+}
+.x-trousers-tl {
+	left: -77px;
+	top: -22px;
+	transform: rotate(34deg);
+}
+.x-trousers-tr {
+	right: -77px;
+	top: -22px;
+	transform: rotate(-34deg);
+}
+.x-trousers-tl::after,.x-trousers-tr::after {
+	content: "";
+	width: 10px;
+	height: 10px;
+	background: #000;
+	border-radius: 50%;
+	position: absolute;
+}
+.x-trousers-tl::after {
+	left: 81px;
+	top: 6px;
+}
+.x-trousers-tr::after {
+	left: 7px;
+	top: 5px;
+}
+/*头发的动画效果*/
+.x-hair1,.x-hair2 {
+	animation: hair 5s linear infinite;
+}
+@keyframes hair {
+    20% {
+    	transform: rotate(45deg);
+    }
+    40% {
+    	transform: rotate(40deg);
+    }
+    60% {
+    	transform: rotate(45deg);
+    }
+    80% {
+    	transform: rotate(50deg);
+    }
+    100% {
+    	transform: rotate(45deg);
+    }
+}
+.x-l-black,.x-r-black {
+	animation: eyeblack 4s linear infinite;
+}
+@keyframes eyeblack {
+    20% {
+    	transform: translateX(0px);
+    }
+    40% {
+    	transform: translateX(15px);
+    }
+    60% {
+    	transform: translateX(0px);
+    }
+    80% {
+    	transform: translateX(-15px);
+    }
+    100% {
+    	transform: translateX(0px);
+    }
+}
+.x-l-white,.x-r-white {
+	animation: eyewhite 4s linear infinite;
+}
+@keyframes eyewhite {
+    20% {
+    	transform: translate(0,0);
+    }
+    40% {
+    	transform: translate(15px,4px);
+    }
+    60% {
+    	transform: translate(0,0);
+    }
+    80% {
+    	transform: translate(-15px,4px);
+    }
+    100% {
+    	transform: translate(0,0);
+    }
+}

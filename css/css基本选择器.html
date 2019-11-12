@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {/* 通配符选择器
+			通配符选择器用“*”号表示，他是所有选择器中作用范围最广的，能匹配页面中所有的元素
+			但是权重低 */
+			font-style: italic;
+		}
+		p {/*标签选择器（元素选择器）
+             标签选择器是指用HTML标签名称作为选择器，按标签名称分类，为页面中某一类标签指定统一的CSS样式
+             标签选择器最大的优点是能快速为页面中同类型的标签统一样式，同时这也是他的缺点，不能设计差异化样式
+			*/
+			color: red;
+			font-size: 18px;
+		}
+        .ttt {/* 类选择器
+                 类选择器使用“.”（英文点号）进行标识，后面紧跟类名
+                 类选择器最大的优势是可以为元素对象定义单独或相同的样式 */
+        	color:pink;
+        	font-size: 20px;
+        } 
+        .font11 {
+        	font-size: 11px;
+        } 
+        .font22 {
+        	font-size: 22px;
+        }  
+        .red {
+        	color:red;
+        } 
+        #aaa {/* id选择器
+                 id选择器使用“#”进行标识，后面紧跟id名
+                 该语法中，id名即为HTML元素的id属性值，大多数HTML元素都可以定义id属性，元素的id值是唯一的，只能对应于文档中某一个具体的元素。 */
+            color:blue;
+        }
+	</style>
+</head>
+<body>
+	<p>标签选择器</p>
+	<p>标签选择器</p>
+    <h1>标签选择器</h1>
+    <h1>标签选择器</h1>
+
+    <div class="ttt">类选择器111</div>
+    <div>类选择器222</div>
+    <div>类选择器333</div>
+
+    <div class="font11 red">多类名选择器111</div>
+    <div class="font22 red">多类名选择器222</div>
+    <!-- 多类名选择器,可以给标签指定多个类名，从而达到更多的选择目的-->
+    <div>多类名选择器333</div>
+
+    <div id="aaa">id选择器a</div>
+    <div>id选择器b</div>
+    <div>id选择器c</div>
+
+    <!-- 类选择器与id选择器的区别：
+      类选择器是可以重复多次使用的
+      id是唯一的，只允许使用一次 -->
+
+     <p>通配符选择器</p>
+     <ul>
+     	<li>通配符选择器</li>
+     	<li>通配符选择器</li>
+     	<li>通配符选择器</li>
+     	<li>通配符选择器</li>
+     	<li>通配符选择器</li>
+     </ul>
+</body>
+</html>

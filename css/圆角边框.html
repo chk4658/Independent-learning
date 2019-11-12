@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <style type="text/css">
+    	div:first-child {
+    		width: 500px;
+    		height: 200px;
+    		border: 1px solid red;
+    		border-radius: 50px;
+    	}
+    	div:nth-child(2) {
+    		width: 500px;
+    		height: 500px;
+    		border: 1px solid red;
+    		border-radius: 250px;/*或者50%*/
+    	}
+    	div:nth-child(3) {
+    		width: 500px;
+    		height: 500px;
+    		border: 1px solid red;
+    		border-radius: 10px 50px;/*左上和右下10px,右上左下50px*/
+    	}
+    	div:nth-child(4) {
+    		width: 500px;
+    		height: 500px;
+    		border: 1px solid red;
+    		border-radius: 10px 50px 100px;/*左上10px,右上左下50px,右下100px*/
+    	}
+    	div:nth-child(5) {
+    		width: 500px;
+    		height: 500px;
+    		border: 1px solid red;
+    		border-radius: 10px 50px 100px 200px;
+    		/*从左上开始顺时针*/
+    	}
+    </style>
+</head>
+<body>
+	<div>圆角边框</div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

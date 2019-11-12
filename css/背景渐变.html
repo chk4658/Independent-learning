@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div {
+			width: 300px;
+			height: 30px;
+			/* background:-webkit-linear-gradient(渐变的起始位置， 起始颜色， 结束颜色)； */
+			background: -webkit-linear-gradient(left, red, green);
+			/*背景渐变 兼容性问题严重，必须在前面添加浏览器的私有前缀*/
+			margin: 200px auto;
+		}
+		section {
+			width: 400px;
+			height: 100px;
+			margin: 0 auto;
+			/* background:-webkit-linear-gradient(渐变的起始位置， 颜色 位置， 颜色 位置....)； */
+			background: -webkit-linear-gradient(top, 0% red, green 50%, blue 100%)
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<section></section>
+</body>
+</html>

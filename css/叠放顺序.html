@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div {
+			width: 500px;
+			height: 200px;
+			background-color: #aaa;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		div:nth-child(1){
+            /* 只有相对定位，绝对定位，固定定位有此属性，其余标准流，浮动，静态定位都无此属性，亦不可指定此属性 */
+            z-index: 2;
+		}
+		div:nth-child(2){
+			background-color: #ccc;
+			z-index: 3;
+		}
+		div:nth-child(3){
+			background-color: #ddd;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+</html>

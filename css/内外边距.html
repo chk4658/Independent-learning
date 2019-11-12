@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div {
+			width: 500px;
+			height: 500px;
+			border: 1px solid #000;
+			/*padding: 20px;内边距会撑开盒子
+
+			如果一个盒子没有给定宽度/高度或者继承父亲的宽度/高度，则padding 不会影响本盒子大小
+
+			*/
+			/*padding: 10px 30px;上下10px，左右30px*/
+			/*padding: 10px 30px 50px;
+			上10px左右30px下50px*/
+			padding: 10px 30px 50px 100px;
+			/*上右下左顺时针*/
+
+			/*margin-top: 100px;
+			margin-left: 50px;*/
+			/*外边距要想使盒子居中
+			1、得是块级元素
+			2、盒子必须指定宽度*/
+			margin: 30px auto;
+		}
+	</style>
+</head>
+<body>
+	<div>内外边距</div>
+	<p>行内元素只有左右外边距，没有上下外边距</p>
+	<h1>相邻块元素垂直外边距的合并</h1>
+	<p>当上下相邻的两个块元素相遇时，如果上面的元素有下外边距margin-bottom，下面的元素有上外边距margin-top，则他们之间的垂直间距不是margin-bottom与margin-top之和，而是两者中的较大者。这种现象被称为相邻块元素垂直外边距的合并（也称外边距塌陷)</p>
+	<h1>嵌套块元素垂直外边距的合并</h1>
+	<p>对于两个嵌套关系的块元素，如果父元素没有上内边距及边框，则父元素的上外边距会与子元素的上外边距发生合并，合并后的外边距为两者中的较大者，即使父元素的上外边距为0，也会发生合并。</p>
+	<p>解决方案：
+
+1. 可以为父元素定义1像素的上边框或上内边距。
+2. 可以为父元素添加overflow:hidden。</p>
+</body>
+</html>

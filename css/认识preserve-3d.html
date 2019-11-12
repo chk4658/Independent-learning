@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body {
+			/*透视*/
+			perspective: 1000px;
+		}
+		div {
+			width: 268px;
+			height: 418px;
+			margin: 100px auto;
+			border: 1px solid #ccc;
+			padding: 5px;
+			background-color: #666;
+			transform: rotateY(30deg);
+			/*让父盒子里面的子盒子以3d效果显示*/
+			transform-style: preserve-3d;
+		}
+		div img {
+			transform: rotateY(30deg);
+		}
+	</style>
+</head>
+<body>
+	<div><img src="images/l.jpg"></div>
+</body>
+</html>

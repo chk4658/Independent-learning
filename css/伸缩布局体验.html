@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		section {
+			width: 80%;
+			height: 200px;
+			border: 1px solid #ccc;
+			margin: 200px auto;
+			display: flex;/*伸缩布局模式*/
+			min-width: 500px;/*设置最小宽度*/
+			flex-direction: column;/*竖着划分*/
+		}
+		section div {
+			/*height: 100%;*/
+		}
+		section div:nth-child(1){
+			background-color: #999;
+			flex: 1;
+		}
+		section div:nth-child(2){
+			background-color: #aaa;
+			flex: 2;/*给子盒子添加份数*/
+			/*margin: 0 5px;*/
+		}
+		section div:nth-child(3){
+			background-color: #bbb;
+			flex: 3;/*给子盒子添加份数*/
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div></div>
+		<div></div>
+		<div></div>
+	</section>
+</body>
+</html>

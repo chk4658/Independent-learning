@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		/*选取标签带有某些特殊属性的选择器，称为属性选择器*/
+		a[title] {
+			/*E[attr]存在attr属性即可*/
+			color: red;
+		}
+		input[type=text] {
+			/*E[attr=val]属性值完全等于val*/
+			color: blue;
+		}
+		div[class^=font] {
+			/*E[attr^=val]属性值里包含val字符并且在“开始”位置*/
+            color: #ccc;
+		}
+		div[class$=footer] {
+			/*E[attr$=val]属性值里包含val字符并且在“结束”位置*/
+			color: red;
+		}
+		div[class*=tao] {
+			/*E[attr*=val]属性值里包含val字符并且在“任意”位置*/
+			color: green;
+		}
+
+		/*伪元素选择器（CSS3)*/
+		p::first-letter {
+			/*E::first-letter文本的第一个单词或字（如中文、日文、韩文等）*/
+			font-size: 50px;
+		}
+		p::first-line {
+			/*E::first-line 文本第一行*/
+			color: green;
+		}
+		p::selection {
+			/*E::selection 可改变选中文本的样式*/
+			color: pink;
+		}
+
+		div::before {
+			/*在盒子内部内容前面加入content内容*/
+			content: "我";
+		}
+		div::after {
+			content: "毕业";
+		}
+	</style>
+</head>
+<body>
+	<a href="#" title="鼠标悬停时显示内容">新浪</a>
+	<a href="#">百度</a>
+
+	<input type="text" name="" value="文本框">
+	<input type="text" name="" value="文本框">
+	<input type="submit" name="">
+	<input type="submit" name="">
+	<input type="reset" name="">
+
+	<div class="font12">属性选择器</div>
+	<div class="font12">属性选择器</div>
+	<div class="font24">属性选择器</div>
+	<div class="font24">属性选择器</div>
+	<div class="sub-footer">属性选择器</div>
+	<div class="jd-footer">属性选择器</div>
+	<div class="new-tao-nav">属性选择器</div>
+	<div class="tao-header">属性选择器</div>
+
+    <h1>伪元素选择器</h1>
+	<p>傍晚，太阳暗淡了下来，红的不再那么耀眼，金的不再那么灿烂。慢慢的，慢慢的，霞光映红了半边天。云，不在那么洁白如玉，就像哪位画家一不小心碰翻了装满颜料的调色盘一样，将它染上了鲜艳的颜色。红、黄、葡萄灰、茄子紫、半灰半百合色，还有些听也没听过，见也没见过的颜色都呈现在云的身上，令人大饱眼福。
+
+　　过了一会儿，夕阳西下，太阳成了一个深红色的皮球，已经有一半沉进了地平线。天空一边深蓝，一边浅蓝，仿佛一个蓝色色相环。云的颜色也加深了不少，他们和太阳一样，也是深红的，似乎快要变成黑色了。
+
+　　太阳沉进了山头，漂亮的彩云也不见了。漫长的黑夜来临了……</p>
+<div>今年</div>
+</body>
+</html>

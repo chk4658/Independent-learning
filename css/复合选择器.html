@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		/* 交集选择器
+		交集选择器由两个选择器构成，其中第一个为标签选择器，第二个为class选择器，两个选择器之间不能有空格，如h3.special。
+		用的相对来说比较少，不太建议使用 */
+		div.singer {/*场景：挑出两大天王歌手*/
+			font-weight: bold;
+			color: red;
+		}
+
+		/* 并集选择器
+		并集选择器（CSS选择器分组）是各个选择器通过逗号连接而成的，任何形式的选择器（包括标签选择器、class类选择器id选择器等），都可以作为并集选择器的一部分。如果某些选择器定义的样式完全相同，或部分相同，就可以利用并集选择器为它们定义相同的CSS样式。 */
+		p,h2,.turn {
+			color: pink;
+		}
+
+		/* 后代选择器
+		后代选择器又称为包含选择器，用来选择元素或元素组的后代，其写法就是把外层标签写在前面，内层标签写在后面，中间用空格分隔。当标签发生嵌套时，内层标签就成为外层标签的后代。
+		子孙后代都可以这么选择。 或者说，它能选择任何包含在内 的标签。 */
+		.nav ul li {/*子孙后代*/
+			color: #bbb;
+		}
+
+		/* 子元素选择器
+		子元素选择器只能选择作为某元素子元素的元素。其写法就是把父级标签写在前面，子级标签写在后面，中间跟一个 >进行连接，注意，符号左右两侧各保留一个空格。 */
+        .ziyuansu > li {
+        	color: red;
+        }
+	</style>
+</head>
+<body>
+	<h1>复合选择器</h1>
+	是由两个或多个基础选择器，通过不同的方式组合而成的,目的是为了可以选择更准确更精细的目标元素标签。
+	<div class="singer">刘德华</div>
+	<div class="singer">张学友</div>
+
+	<p class="singer">汪峰</p>
+	<p class="singer">韩红</p>
+
+	<h2>邓紫棋</h2>
+	<h2>孙燕姿</h2>
+
+    <em class="turn">变</em>
+    <em>不变</em>
+    <em>不变</em>
+
+    <div class="nav">
+    	<ul>
+    		<li>首页</li>
+    		<li>导航</li>
+    		<li>联系</li>
+    	</ul>
+    </div>
+    <ul>
+    	<li>百度</li>
+    	<li>搜狐</li>
+    	<li>新浪</li>
+    </ul>
+
+    <ul class="ziyuansu">
+    	<li>一级
+    		<ul>
+    			<li>二级</li>
+    			<li>二级</li>
+    		</ul>
+    	</li>
+    </ul>
+</body>
+</html>
