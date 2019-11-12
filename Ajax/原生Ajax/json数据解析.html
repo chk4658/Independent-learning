@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>json数据解析</title>
+	<script type="text/javascript">
+		// json数据格式  JavaScript对象标记语言
+		/*
+		json格式与普通的js对象区别
+			1 json数据没有变量
+			2 json形式的数据结尾没有分号
+			3 json数据中的键必须用双引号包住
+		*/
+
+		// var str = '{"name":"zhangsan","age":"12"}';
+		// 把json形式的字符串转换成对象
+		// var obj = JSON.parse(str);
+		// console.log(obj);
+		// 把对象转换成json字符串
+		// var str1 = JSON.stringify(obj);
+		// console.log(str1);
+		// {"name":"zhangsan","age":"12"}
+
+		window.onload = function() {
+			var btn = document.getElementById('btn');
+			btn.onclick = function() {
+				var username = document.getElementById('username').value;
+				var password = document.getElementById('password').value;
+				// 使用Ajax发送请求步骤
+				var xhr = null;
+				if(window.XMLHttpRequest) {
+					xhr = new XMLHttpRequest();
+				}else {
+					xhr = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+
+				// 2、准备发送
+				var param = 'username='+username+'&password='+password;
+				xhr.open('post','data.json',true);
+
+				// 3、执行发送动作
+				xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+				xhr.send(param);
+
+				// 4、指定回调函数
+				xhr.onreadystatechange = function() {
+					if(xhr.readyState == 4) {
+						if(xhr.status == 200) {
+							var data = xhr.responseText;
+							var d = JSON.parse(data);
+
+							// eval的作用就是把字符串解析成js代码
+							// var d = eval("(" + data + ")");
+
+							console.log(d);
+							console.log(d.name);
+					
+						}
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<form>
+		用户名：<input type="text" name="username" id="username"><span id="info"></span><br>
+		密码：<input type="text" name="password" id="password">
+		<input type="button" value="登录" id="btn">
+	</form>
+</body>
+</html>

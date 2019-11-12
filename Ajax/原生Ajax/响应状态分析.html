@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>响应状态分析</title>
+	<script type="text/javascript">
+		window.onload = function() {
+			var btn = document.getElementById('btn');
+			btn.onclick = function() {
+				var username = document.getElementById('username').value;
+				var password = document.getElementById('password').value;
+				// 使用Ajax发送请求步骤
+				// 1、创建XMLHttpRequest对象
+				var xhr = null;
+				if(window.XMLHttpRequest) {
+					xhr = new XMLHttpRequest();
+				}else {
+					xhr = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				// readyState=0表示xhr对象创建完成
+				console.log(xhr.readyState + '---------1---------');
+
+				// 2、准备发送
+				var param = 'username='+username+'&password='+password;
+				xhr.open('get','democheck.php?'+encodeURI(param),true);
+
+				// 3、执行发送动作
+				xhr.send(null);
+
+				// 4、指定回调函数
+				// readyState=1表示已经发送了请求
+				console.log(xhr.readyState + '---------2---------');
+			    // 该函数调用的条件就是readyState状态发生变化（不包括从0到1）
+				xhr.onreadystatechange = function() {
+					/*
+					readyState=
+					2 浏览器已经收到了服务器响应的数据
+					3 正在解析数据
+					4 数据已经解析完成
+					*/
+					console.log(xhr.readyState + '---------3---------');
+					if(xhr.readyState == 4) {
+						// http常见状态码
+						/*
+						200表示响应成功
+						404没有找到请求的资源
+						500服务器端错误
+						*/
+						if(xhr.status == 200) {
+							// 这里的200表示数据是正常的
+							var data = xhr.responseText;
+							var info = document.getElementById('info');
+							if(data == '1') {
+								info.innerHTML = '登录成功';
+							}else if (data == '2') {
+								info.innerHTML = '登录名或密码错误';
+							}
+						}
+					}
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<form>
+		用户名：<input type="text" name="username" id="username"><span id="info"></span><br>
+		密码：<input type="text" name="password" id="password">
+		<input type="button" value="登录" id="btn">
+	</form>
+</body>
+</html>

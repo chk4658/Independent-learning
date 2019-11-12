@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		/*
+		单线程+事件队列
+
+		事件队列中的任务执行的条件：
+		1、主线程已经空闲
+		2、任务满足触发条件
+			1、定时函数（延时时间已经达到）
+			2、事件函数（待定事件被触发）
+			3、Ajax的回调函数（服务器端有数据响应）
+		*/
+		console.log(1);
+		setTimeout(function() {
+			console.log(2);
+		}, 0);
+		var sum = 0;
+		for(var i = 0; i < 100000; i++) {
+			sum += i;
+		}
+		console.log(sum);
+		console.log(3);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

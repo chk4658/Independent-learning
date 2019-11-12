@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#btn").click(function() {
+				$.ajax({
+					// jsonp仅仅支持get请求
+					type:'get',
+					url:'ky/jsonp.php',
+					dataType:'jsonp',
+					jsonp:'cb',
+					// jsonp属性的作用就是自定义参数名字（callback=abc这里名字指的是等号前面的键）
+					jsonpCallback:'abc',
+					// 这个属性的作用就是自定义回调函数的名字
+					success:function(data) {
+						console.log(data);
+					},
+					error:function() {
+						console.log('error');
+					}
+				});
+			});
+		});
+	</script>
+</head>
+<body>
+	<input type="button" value="点击" id="btn">
+</body>
+</html>

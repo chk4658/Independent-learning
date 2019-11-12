@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 隐藏帧实现局部更新 -->
+	<!-- iframe就相当于页面的子页面 -->
+	<div>
+		<form action="iframe.php" method="post" target="myframe">
+			用户名：<input type="text" name="username"><span id="info"></span><br>
+			密码：<input type="text" name="password">
+			<input type="submit" value="登录">
+		</form>
+	</div>
+	<iframe name="myframe" width="0" height="0" frameborder="0"></iframe>
+</body>
+</html>

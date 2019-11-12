@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+xml数据格式
+
+元数据:描述数据的数据
+
+弊端:
+1 元数据占用的数据量比较大,不利于大量数据的网络传输
+2 解析不太方便
+ -->
+<booklist>
+	<book>
+		<name>三国演义</name>
+		<author>罗贯中</author>
+		<desc>四大名著之一</desc>
+	</book>
+	<book>
+		<name>水浒传</name>
+		<author>施耐庵</author>
+		<desc>四大名著之一</desc>
+	</book>
+</booklist>

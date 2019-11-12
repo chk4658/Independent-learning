@@ -1,0 +1,9 @@
+{
+	"name":"zhangsan",
+	"age":12,
+	"hobby":["coding","swimming","singing"],
+	"friend":{
+		"height":"180cm",
+		"weight":"80kg"
+	}
+}
