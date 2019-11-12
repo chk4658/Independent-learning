@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 150px;
+            background-color: #666;
+        }
+    </style>
+    <script src="jquery-1.12.2.js"></script>
+    <script>
+        $(function() {
+            /* $("#btn").bind("click", function() {
+                alert("sda");
+            }); */
+            /* $("#btn").bind({"mouseover": function() {
+                console.log("1");
+            },"mouseout": function() {
+                console.log("2");
+            }}); */
+            
+            /* var i = 0;
+            $("#btn").bind("mouseover mouseout", function() {
+                i++;
+                console.log(i);
+            }); */
+
+            /*
+            delegate:
+            3个参数
+            1、要绑定事件的元素
+            2、要绑定的事件
+            3、事件的处理函数
+            */
+            /* $("#dv").delegate("p", "click", function() {
+                alert("sdfsd");
+            }); */
+
+            /* 
+            推荐使用on
+            两个参数时：1、事件的名字 2、事件处理函数
+            三个参数时：1、事件的名字 2、要绑定事件的元素 3、事件处理函数
+            */
+            $("#dv").on("click", "p", function() {
+                alert("sdasjdh");
+            });
+            // 解绑事件
+            // on-->off  bind-->unbind  delegate-->undelegate
+        });
+    </script>
+</head>
+<body>
+    <input type="button" value="显示效果" id="btn">
+    <div id="dv">
+        <p>绑定事件</p>
+    </div>
+</body>
+</html>
