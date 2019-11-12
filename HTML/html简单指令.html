@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>！+ tab快速建立html模板</p>
+	<h1>1到6级标题</h1>
+	<h2>1到6级标题</h2>
+	<h3>1到6级标题</h3>
+	<h4>1到6级标题</h4>
+	<h5>1到6级标题</h5>
+	<h6>1到6级标题</h6>
+	<h7>最多到6，7就是正常的普通文本</h7>
+	<!-- 水平线 -->
+	<hr/ >
+	<p>段落</p>
+	<p>刘德华出生于香港新界，在家中排行老四，幼时随家人搬到了九龙钻石山的木屋区居住，并和姐弟一起帮助家里打理卖稀饭的生意 [25]  。1973年，刘德华随家人搬入香港蓝田邨第15座14楼 [26]  。刘德华从黄大仙天主教小学毕业后升读可立中学 [27]  。在可立中学读书期间，刘德华积极参加校内学校剧社的表演，在老师杜国威的指导下学习戏剧方面的知识。此外，他还参与包括编剧在内的幕后制作。刘德华在中五会考获得1B3D2E（中文读本A）的成绩。中六上学期后，他到香港电视广播有限公司的艺员训练班受训，从而开始了演艺之路 [28]  。</p>
+	<!-- font常用属性
+		color:颜色
+        size:改变字体大小 范围1-7
+        face:字体
+	 -->
+	<font color="red" size="7" face="仿宋">font属性的使用</font><br/ >
+	<b>加粗</b>
+	<i>斜体</i><br/ >
+	<strong>带语义的加粗</strong>
+	<em>带语义的斜体</em><br/ >
+	<img src="images/QQ图片20190829151642.png" width="200px" alt="加载失败时的提示信息"><br/ >
+	<ul type="circle"><!-- circle空心圆圈
+	                       disc默认的实心圆点
+	                       square小方块 -->
+		<li>无序列表ul>li*3</li>
+		<li>无序列表</li>
+		<li>无序列表</li>
+	</ul>
+	<ol type="a" start="2"><!-- type: 指定序号的类型
+	                            start：从几开始，必须写数字-->
+		<li><a href="https://www.baidu.com/?tn=97617981_hao_pg" target="_blank">baidu</a></li>
+		<!-- target默认是_self表示在当前窗口打开链接，_表示在新页面打开 -->
+		<li><a href="https://www.baidu.com/?tn=97617981_hao_pg" target="_self">baidu</a></li>
+		<li>有序列表</li>
+	</ol>
+	<!-- table
+		border 指定边框
+		bgcolor 背景颜色
+		align 对齐方式
+		colspan:跨列
+		rowspan：跨行
+	          tr行标签
+	          td列标签 -->
+	<table border="1px" width="600px" bgcolor="skyblue" align="center">
+		<tr>
+			<td colspan="2">1</td>
+			<td>1</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td align="center">1</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+			<td rowspan="2">1</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>1</td>
+			<td>1</td>
+		</tr>
+	</table>
+	<!-- text文本输入框
+	     password密码
+	     radio单选按钮
+	     checkbox复选框
+	     select下拉选项
+	           下面要有option标签
+	     表单标签form
+	           action提交的地址
+	           method
+	                get方式  默认方式  会将参数拼接在链接后面,有大小限制 4k
+	                post方式  会将参数封装在请求体中
+	            -->
+	<form action="#">
+		<!-- 隐藏域 -->
+		<input type="hidden" value="sdafafegtgew">
+		用户名：<input type="text" name="" placeholder="请输入用户名"><br/ >
+	    密码：<input type="password" name=""><br/ >
+	    性别：<input type="radio" name="sex">男
+	          <input type="radio" name="sex">女<br/ >
+	    爱好：<input type="checkbox" name="hobby">篮球
+	          <input type="checkbox" name="hobby">足球
+	          <input type="checkbox" name="hobby">乒乓球<br/ >
+	    建议：<textarea name="ss" id="" cols="30" rows="10"></textarea><br/ >
+	    籍贯：<select>
+		          <option>---请选择---</option>
+		          <option>asbdjkas</option>
+		          <option>asbdjkas</option>
+	          </select><br/ >
+	    出生日期:<input type="date"><br/ > 
+	    选择文件:<input type="file"><br/ > 
+	    手机号码:<input type="tel"> <br/ >     
+	          <input type="submit" value="tijiao">
+	</form>
+</body>
+</html>
